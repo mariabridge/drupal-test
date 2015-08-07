@@ -1,0 +1,26 @@
+<?php
+function person_menu(){
+
+  $items  = array();
+  $items['person'] = array(
+    'title' => "Person",
+    'page callback' => "person_personal_info", // after visit drupal6/person, person_personal_info() function is called
+    'access callback' => true,  // must return true, otherwise it will not visible as menu item
+    'type' => MENU_NORMAL_ITEM, // drupal's default menu type 
+    'weight' => '10', // we want to display person link below in our nav menu
+  );    
+    return $items; 
+
+}
+
+    /**
+     * callback function for person
+     *
+     */
+    function person_personal_info(){
+      $output = 'Name: Hasan Hafiz </br>';
+      $output .= 'City: Dhaka </br>';
+      $output .= 'Country: Bangladesh </br>';
+      return $output;
+    }
+?>
